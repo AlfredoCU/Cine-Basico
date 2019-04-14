@@ -6,7 +6,7 @@ public class Cine {
     static ArrayList<Cartelera> listaCartelera = new ArrayList<>();
     
     // Atributos.
-    static int id, cantA, cantM, cantN, totalP, totalB, asientos, vendido = 0;
+    static int id, cantA, cantM, cantN, totalP, totalB, asientos, vendido;
 
     // Lista de Cartelera.
     public static void lista() {
@@ -167,7 +167,7 @@ public class Cine {
                        System.out.print("\n-Total a pagar: " + totalP + "\n");
                        asientos = c.getAsientosDisponibles() - totalB;
                        c.setAsientosDisponibles(asientos);
-                       vendido = vendido + totalB;
+                       vendido = c.getAsientosOcupados() + totalB;
                        c.setAsientosOcupados(vendido);
                        menuPrincipal();
                        break;
@@ -188,7 +188,7 @@ public class Cine {
                        System.out.print("\n-Total a pagar: " + totalP + "\n");
                        asientos = c.getAsientosDisponibles() - totalB;
                        c.setAsientosDisponibles(asientos);
-                       vendido = vendido + totalB;
+                       vendido = c.getAsientosOcupados() + totalB;
                        c.setAsientosOcupados(vendido);
                        menuPrincipal();
                        break;
@@ -209,7 +209,7 @@ public class Cine {
                        System.out.print("\n-Total a pagar: " + totalP + "\n");
                        asientos = c.getAsientosDisponibles() - totalB;
                        c.setAsientosDisponibles(asientos);
-                       vendido = vendido + totalB;
+                       vendido = c.getAsientosOcupados() + totalB;
                        c.setAsientosOcupados(vendido);
                        menuPrincipal();
                        break;
