@@ -165,11 +165,17 @@ public class Cine {
                        System.out.print("\n-Cantidad de boletos: " + totalB);
                        totalP = (cantA * 50) + (cantM * 20) + (cantN * 25);
                        System.out.print("\n-Total a pagar: " + totalP + "\n");
-                       asientos = c.getAsientosDisponibles() - totalB;
-                       c.setAsientosDisponibles(asientos);
-                       vendido = c.getAsientosOcupados() + totalB;
-                       c.setAsientosOcupados(vendido);
-                       menuPrincipal();
+                       if(c.getAsientosDisponibles() >= totalB) {
+                           asientos = c.getAsientosDisponibles() - totalB;
+                           c.setAsientosDisponibles(asientos);
+                           vendido = c.getAsientosOcupados() + totalB;
+                           c.setAsientosOcupados(vendido);
+                           menuPrincipal();
+                       }
+                       else {
+                           System.out.println("-¡No se pudo realizar la compra,"
+                                   + "porque excede asientos disponibles!");
+                       }
                        break;
                    case "3D":
                        System.out.println("-Adulto.......$70.00\n"
@@ -186,11 +192,17 @@ public class Cine {
                        System.out.print("\n-Cantidad de boletos: " + totalB);
                        totalP = (cantA * 70) + (cantM * 30) + (cantN * 35);
                        System.out.print("\n-Total a pagar: " + totalP + "\n");
-                       asientos = c.getAsientosDisponibles() - totalB;
-                       c.setAsientosDisponibles(asientos);
-                       vendido = c.getAsientosOcupados() + totalB;
-                       c.setAsientosOcupados(vendido);
-                       menuPrincipal();
+                       if(c.getAsientosDisponibles() >= totalB) {
+                           asientos = c.getAsientosDisponibles() - totalB;
+                           c.setAsientosDisponibles(asientos);
+                           vendido = c.getAsientosOcupados() + totalB;
+                           c.setAsientosOcupados(vendido);
+                           menuPrincipal();
+                       }
+                       else {
+                           System.out.println("-¡No se pudo realizar la compra,"
+                                   + "porque excede asientos disponibles!");
+                       }
                        break;
                    case "IMAX":
                        System.out.println("-Adulto.......$80.00\n"
@@ -207,13 +219,20 @@ public class Cine {
                        System.out.print("\n-Cantidad de boletos: " + totalB);
                        totalP = (cantA * 80) + (cantM * 40) + (cantN * 45);
                        System.out.print("\n-Total a pagar: " + totalP + "\n");
-                       asientos = c.getAsientosDisponibles() - totalB;
-                       c.setAsientosDisponibles(asientos);
-                       vendido = c.getAsientosOcupados() + totalB;
-                       c.setAsientosOcupados(vendido);
-                       menuPrincipal();
+                       if(c.getAsientosDisponibles() >= totalB) {
+                           asientos = c.getAsientosDisponibles() - totalB;
+                           c.setAsientosDisponibles(asientos);
+                           vendido = c.getAsientosOcupados() + totalB;
+                           c.setAsientosOcupados(vendido);
+                           menuPrincipal();
+                       }
+                       else {
+                           System.out.println("-¡No se pudo realizar la compra,"
+                                   + "porque excede asientos disponibles!");
+                       }
                        break;
                    default:
+                       System.out.println("-¡No hay ese tipo de sala!");
                        break;
                }
            }
