@@ -53,7 +53,7 @@ public class Cartelera extends Sala {
     }
         
     //Mostar infomacion de cartelera.
-    public String DatosCartelera(){
+    public String DatosCartelera() {
         return "\n-Numero de Cartelera: " + idCartelera + "\n-Pelicula: " + 
                 getTitulo() + "\n-Genero: " + getGenero() + "\n-Clasificacion: " + 
                 getClasificacion() + "\n-Duracion: " + getDuracion() + 
