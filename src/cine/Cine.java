@@ -146,7 +146,11 @@ public class Cine {
         id = sn.nextInt();
         System.out.println("\n*******FUNCIÓN*******");
         for(Cartelera c: listaCartelera) {
-           if(id == c.getIdCartelera()) {
+           if(c.getIdCartelera() != id) {
+               // System.out.println("-¡No existe esta cartelera!");
+               // break; // No se puede validar esto, porque es una busqueda lineal.
+           }
+           else {
                System.out.println(c.DatosCartelera());
                System.out.println("\n*******BOLETOS*******\n");
                if(null != c.getTipoSala()) switch (c.getTipoSala()) {
@@ -236,7 +240,7 @@ public class Cine {
                        break;
                }
            }
-        } 
+        }
     }
     
     // Main.    
