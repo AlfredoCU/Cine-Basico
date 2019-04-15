@@ -155,30 +155,35 @@ public class Cine {
                System.out.println("\n*******BOLETOS*******\n");
                if(null != c.getTipoSala()) switch (c.getTipoSala()) {
                    case "2D":
-                       System.out.println("-Adulto.......$50.00\n"
-                               + "-Mayor........$20.00\n"
-                               + "-Niño.........$25.00\n");
-                       System.out.print("\n-Cantidad de boletos para Adulto: ");
-                       cantA = sn.nextInt();
-                       System.out.print("\n-Cantidad de boletos para Mayor: ");
-                       cantM = sn.nextInt();
-                       System.out.print("\n-Cantidad de boletos para Niño: ");
-                       cantN = sn.nextInt();
-                       System.out.println("\n*******COMPRA*******");
-                       totalB = cantA + cantM + cantN;
-                       System.out.print("\n-Cantidad de boletos: " + totalB);
-                       totalP = (cantA * 50) + (cantM * 20) + (cantN * 25);
-                       System.out.print("\n-Total a pagar: " + totalP + "\n");
-                       if(c.getAsientosDisponibles() >= totalB) {
-                           asientos = c.getAsientosDisponibles() - totalB;
-                           c.setAsientosDisponibles(asientos);
-                           vendido = c.getAsientosOcupados() + totalB;
-                           c.setAsientosOcupados(vendido);
-                           menuPrincipal();
+                       if(c.getAsientosDisponibles() <= 0) {
+                           System.out.println("-¡Esta función ya esta llena!");
                        }
                        else {
-                           System.out.println("-¡No se pudo realizar la compra,"
-                                   + "porque excede asientos disponibles!");
+                           System.out.println("-Adulto.......$50.00\n"
+                                   + "-Mayor........$20.00\n"
+                                   + "-Niño.........$25.00\n");
+                           System.out.print("\n-Cantidad de boletos para Adulto: ");
+                           cantA = sn.nextInt();
+                           System.out.print("\n-Cantidad de boletos para Mayor: ");
+                           cantM = sn.nextInt();
+                           System.out.print("\n-Cantidad de boletos para Niño: ");
+                           cantN = sn.nextInt();
+                           System.out.println("\n*******COMPRA*******");
+                           totalB = cantA + cantM + cantN;
+                           System.out.print("\n-Cantidad de boletos: " + totalB);
+                           totalP = (cantA * 50) + (cantM * 20) + (cantN * 25);
+                           System.out.print("\n-Total a pagar: " + totalP + "\n");
+                           if(c.getAsientosDisponibles() >= totalB) {
+                               asientos = c.getAsientosDisponibles() - totalB;
+                               c.setAsientosDisponibles(asientos);
+                               vendido = c.getAsientosOcupados() + totalB;
+                               c.setAsientosOcupados(vendido);
+                               menuPrincipal();
+                           }
+                           else {
+                               System.out.println("-¡No se pudo realizar la compra,"
+                                       + "porque excede asientos disponibles!");
+                           }
                        }
                        break;
                    case "3D":
