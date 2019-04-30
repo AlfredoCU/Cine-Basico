@@ -15,7 +15,6 @@ public class Menu {
 
     // Lista de Cartelera.
     public static void lista() {
-        // listaCartelera.ensureCapacity(100); Usar cuando ya esten todos los elementos.
         listaCartelera.add(new Cartelera(1, 210, 0, "12:00", 1, 210, "2D", "Shazam", "Accion", "B", 120));
         listaCartelera.add(new Cartelera(2, 210, 0, "07:00", 2, 210, "3D", "Shazam", "Accion", "B", 120));
         listaCartelera.add(new Cartelera(3, 210, 0, "07:00", 3, 210, "IMAX", "Shazam", "Accion", "B", 120));
@@ -27,6 +26,35 @@ public class Menu {
         listaCartelera.add(new Cartelera(7, 210, 0, "12:00", 5, 210, "2D", "Dumbo", "Animada", "A", 90));
         listaCartelera.add(new Cartelera(8, 210, 0, "12:00", 2, 210, "3D", "Dumbo", "Animada", "A", 90));
         listaCartelera.add(new Cartelera(9, 210, 0, "12:00", 3, 210, "IMAX", "Dumbo", "Animada", "A", 90));
+        
+        listaCartelera.add(new Cartelera(10, 210, 0, "12:45", 6, 210, "2D", "Parque Magico", "Infantil", "A", 120));
+        listaCartelera.add(new Cartelera(11, 210, 0, "14:00", 6, 210, "2D", "Parque Magico", "Infantil", "A", 120));
+        listaCartelera.add(new Cartelera(12, 210, 0, "05:30", 6, 210, "2D", "Parque Magico", "Infantil", "A", 120));
+        
+        listaCartelera.add(new Cartelera(13, 210, 0, "14:45", 7, 210, "2D", "Captain Marvel", "Accion", "B", 120));
+        listaCartelera.add(new Cartelera(14, 210, 0, "12:00", 7, 210, "2D", "Captain Marvel", "Accion", "B", 120));
+        listaCartelera.add(new Cartelera(15, 210, 0, "09:45", 7, 210, "2D", "Captain Marvel", "Accion", "B", 120));
+         
+        listaCartelera.add(new Cartelera(16, 210, 0, "12:00", 8, 210, "2D", "Cementerio de Animales", "Terror", "C", 90));
+        listaCartelera.add(new Cartelera(17, 210, 0, "12:00", 8, 210, "2D", "Cementerio de Animales", "Terror", "C", 90));
+        listaCartelera.add(new Cartelera(18, 210, 0, "12:00", 8, 210, "2D", "Cementerio de Animales", "Terror", "C", 90)); 
+	 
+	listaCartelera.add(new Cartelera(19, 210, 0, "12:00", 9, 210, "2D", "Hellboy", "Accion", "C", 120));
+        listaCartelera.add(new Cartelera(20, 210, 0, "07:00", 9, 210, "2D", "Hellboy", "Accion", "C", 120));
+        listaCartelera.add(new Cartelera(21, 210, 0, "07:00", 9, 210, "2D", "Hellboy", "Accion", "C", 120));
+        
+        listaCartelera.add(new Cartelera(22, 210, 0, "14:45", 10, 210, "2D", "A Dos Metros de Ti", "Romance", "B", 120));
+        listaCartelera.add(new Cartelera(23, 210, 0, "12:00", 10, 210, "2D", "A Dos Metros de Ti", "Romance", "B", 120));
+        listaCartelera.add(new Cartelera(24, 210, 0, "09:45", 10, 210, "2D", "A Dos Metros de Ti", "Romance", "B", 120));
+         
+        listaCartelera.add(new Cartelera(25, 210, 0, "12:00", 11, 210, "2D", "After", "Terror", "B", 90));
+        listaCartelera.add(new Cartelera(26, 210, 0, "12:00", 11, 210, "2D", "After", "Terror", "B", 90));
+        listaCartelera.add(new Cartelera(27, 210, 0, "12:00", 11, 210, "2D", "After", "Terror", "B", 90));
+    
+	listaCartelera.add(new Cartelera(28, 210, 0, "12:45", 12, 210, "2D", "Haunted Hospital", "Terror", "C", 120));
+        listaCartelera.add(new Cartelera(29, 210, 0, "14:00", 12, 210, "2D", "Haunted Hospital", "Terror", "C", 120));
+        listaCartelera.add(new Cartelera(30, 210, 0, "05:30", 12, 210, "2D", "Haunted Hospital", "Terror", "C", 120));
+        listaCartelera.ensureCapacity(31); // No gastar mas memoria.
     }
     
     // Mostar los elementos de la lista.
@@ -71,7 +99,7 @@ public class Menu {
     public static void menuPelicula() {
         Scanner sn = new Scanner(System.in);
         boolean salir = false;
-        int opcion; //Guardaremos la opción del usuario
+        int opcion1; //Guardaremos la opción del usuario
         
         while (!salir) {
             System.out.println("\n*******PÉLICULAS*******\n\n"
@@ -82,16 +110,16 @@ public class Menu {
                     + "5.-Captain Marvel.\n"
                     + "6.-Cementerio de Animales.\n"
                     + "7.-Hellboy.\n"
-                    + "8.-A dos Metros de Ti.\n"
+                    + "8.-A Dos Metros de Ti.\n"
                     + "9.-After.\n"
                     + "10.-Haunted Hospital.\n"
                     + "11.-Regresar.\n");
             
             try {
                 System.out.print("-La opción es: ");
-                opcion = sn.nextInt();
+                opcion1 = sn.nextInt();
                 System.out.print("\n*******CARTELERA*******\n");
-                switch (opcion) {
+                switch (opcion1) {
                     case 1:
                         mostrar("Shazam");
                         menuFinal();
@@ -118,9 +146,10 @@ public class Menu {
                         break;
                     case 7:
                         mostrar("Hellboy");
+                        menuFinal();
                         break;
                     case 8:
-                        mostrar("A dos Metros de Ti");
+                        mostrar("A Dos Metros de Ti");
                         menuFinal();
                         break;
                     case 9:
@@ -135,7 +164,7 @@ public class Menu {
                         salir = true;
                         break;
                     default:
-                        System.out.println("-¡La ocpión no es valida!");
+                        System.out.println("-¡La opción no es valida!");
                 }
             } catch (InputMismatchException e) {
                 System.out.println("-¡Debes insertar un número!");
@@ -187,7 +216,7 @@ public class Menu {
                            }
                            else {
                                System.out.println("-¡No se pudo realizar la compra,"
-                                       + "porque excede asientos disponibles!");
+                                       + " porque excede asientos disponibles!");
                            }
                        }
                        break;
@@ -215,7 +244,7 @@ public class Menu {
                        }
                        else {
                            System.out.println("-¡No se pudo realizar la compra,"
-                                   + "porque excede asientos disponibles!");
+                                   + " porque excede asientos disponibles!");
                        }
                        break;
                    case "IMAX":
@@ -242,7 +271,7 @@ public class Menu {
                        }
                        else {
                            System.out.println("-¡No se pudo realizar la compra,"
-                                   + "porque excede asientos disponibles!");
+                                   + " porque excede asientos disponibles!");
                        }
                        break;
                    default:
