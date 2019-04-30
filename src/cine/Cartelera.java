@@ -54,12 +54,12 @@ public class Cartelera extends Sala {
         
     //Mostar infomacion de cartelera.
     public String DatosCartelera() {
-        return "\n-Numero de Cartelera: " + idCartelera + "\n-Pelicula: " + 
-                getTitulo() + "\n-Genero: " + getGenero() + "\n-Clasificacion: " + 
-                getClasificacion() + "\n-Duracion: " + getDuracion() + 
-                "\n-Hora de Incio: " + horaInicio + "\n-Numero de Sala: " + getIdSala() +
+        return "\n-Número de Cartelera: " + idCartelera + "\n-Pélicula: " + 
+                getTitulo() + "\n-Genero: " + getGenero() + "\n-Clasificación: " + 
+                getClasificacion() + "\n-Duración: " + getDuracion() + 
+                "\n-Hora de Incio: " + horaInicio + "\n-Número de Sala: " + getIdSala() +
                 "\n-Tipo de Sala: " + getTipoSala() + "\n-Total de Asientos: " 
-                + getAsientosTotales() + "\n-Asientos Dispoibles: " + asientosDisponibles +
+                + getAsientosTotales() + "\n-Asientos Disponibles: " + asientosDisponibles +
                 "\n-Asientos Vendidos: " + asientosOcupados;
     }
 }
